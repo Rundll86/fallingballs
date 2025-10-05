@@ -16,3 +16,17 @@ func _process(_delta):
 	texture.anchor = borderPolygon
 	hitbox.polygon = texture.polygon
 	background.color = backgroundColor
+	ballInfo.text = getBallInfo()
+
+func getAllBalls() -> Array[BallBase]:
+	var result: Array[BallBase] = []
+	for child in get_children():
+		if child is BallBase:
+			result.append(child)
+	return result
+func getBallInfo() -> String:
+	var result: String = ""
+	for ball in getAllBalls():
+		if not ball.byClone:
+			result += ball.getInfo() + "\n"
+	return result

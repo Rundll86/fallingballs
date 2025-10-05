@@ -27,10 +27,6 @@ func _ready():
 func _process(_delta):
 	hitbox.shape.radius = radius
 	mask.radius = radius
-	if not byClone:
-		var parent = get_parent()
-		if parent is PlaygroundBase:
-			parent.ballInfo.text = applyInfo()
 
 func playSound(sound: String):
 	var cloned: AudioStreamPlayer2D = sounds.get_node(sound).duplicate()
@@ -45,10 +41,16 @@ func clone(offset: Vector2):
 	cloned.byClone = true
 	cloned.position += offset
 	return cloned
+func getInfo():
+	return "%s %s" % [displayName, applyInfo()]
+func value(data) -> String:
+	return "%d" % data
+func percent(data) -> String:
+	return "%.1f%%" % (data * 100)
 
 func getDamage():
 	return 1
 func onAttack(_wall: WallBase):
 	pass
 func applyInfo():
-	return "%s 伤害：%s" % [displayName, getDamage()]
+	return "伤害：%s" % [value(getDamage())]
