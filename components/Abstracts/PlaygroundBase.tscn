@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv3xpp77cnm4a"]
+
+[ext_resource type="Script" path="res://scripts/Statemachines/PlaygroundBase.gd" id="1_hao73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlyfm"]
+
+[node name="PlaygroundBase" type="StaticBody2D"]
+script = ExtResource("1_hao73")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nlyfm")
+disabled = true
+
+[node name="texture" type="Polygon2D" parent="."]

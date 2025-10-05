@@ -1,3 +1,5 @@
-[gd_scene format=3 uid="uid://bssae6t8rpuio"]
+[gd_scene load_steps=2 format=3 uid="uid://d0jigswwk1dgh"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://cv3xpp77cnm4a" path="res://components/Abstracts/PlaygroundBase.tscn" id="1_d8vvi"]
+
+[node name="PlaygroundBase" instance=ExtResource("1_d8vvi")]
