@@ -10,6 +10,7 @@ class_name BallBase
 @onready var texture: Sprite2D = $"%texture"
 @onready var sounds: Node2D = $"%sounds"
 var bounceTime: int = 0
+var byClone: bool = false
 
 func _ready():
 	hitbox.shape = hitbox.shape.duplicate()
@@ -27,9 +28,10 @@ func _process(_delta):
 	hitbox.shape.radius = radius
 	mask.radius = radius
 	texture.scale = (Vector2.ONE * 2 * radius) / texture.get_rect().size
-	var parent = get_parent()
-	if parent is PlaygroundBase:
-		parent.ballInfo.text = applyInfo()
+	if not byClone:
+		var parent = get_parent()
+		if parent is PlaygroundBase:
+			parent.ballInfo.text = applyInfo()
 
 func playSound(sound: String):
 	var cloned: AudioStreamPlayer2D = sounds.get_node(sound).duplicate()
@@ -37,6 +39,12 @@ func playSound(sound: String):
 	cloned.play()
 	await cloned.finished
 	cloned.queue_free()
+func clone(offset: Vector2):
+	var cloned = duplicate()
+	get_parent().call_deferred("add_child", cloned)
+	cloned.byClone = true
+	cloned.position += offset
+	return cloned
 
 func getDamage():
 	return 1
