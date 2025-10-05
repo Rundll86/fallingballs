@@ -1,15 +1,19 @@
 extends BallBase
+class_name DrillBall
 
 var count = 1.0
+var penerate = 0.1
 
 func onAttack(_wall: WallBase):
 	for i in floor(count):
 		get_parent().call_deferred("add_child", BulletBase.create("Drill", self, position - Vector2(radius * 2 * randf_range(-1, 1), 0), deg_to_rad(90)))
 func getDamage():
 	count = bounceTime * 0.25 + 1
+	penerate = bounceTime * 0.01
 	return bounceTime + 1
 func applyInfo():
-	return "伤害：%s，钻头：%s" % [
+	return "伤害：%s，钻头：%s，穿透：%s" % [
 		value(getDamage()),
-		value(count)
+		value(count),
+		percent(penerate)
 	]
