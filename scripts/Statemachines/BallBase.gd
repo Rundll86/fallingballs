@@ -9,6 +9,7 @@ class_name BallBase
 @onready var hitbox: CollisionShape2D = $"%hitbox"
 @onready var mask: Circle = $"%mask"
 @onready var texture: Sprite2D = $"%texture"
+@onready var sounds: Node2D = $"%sounds"
 var bounceTime: int = 0
 
 func _ready():
@@ -19,6 +20,7 @@ func _ready():
 				body.takeDamage(damage, self)
 				onAttack(body)
 				bounceTime += 1
+				playSound("attack")
 				EffectBase.create("HitWall", position + Vector2(0, radius), 0, get_parent())
 	)
 	apply_central_force(Vector2(10000, 0))
@@ -29,6 +31,13 @@ func _process(_delta):
 	var parent = get_parent()
 	if parent is PlaygroundBase:
 		parent.ballInfo.text = applyInfo()
+
+func playSound(sound: String):
+	var cloned: AudioStreamPlayer2D = sounds.get_node(sound).duplicate()
+	add_child(cloned)
+	cloned.play()
+	await cloned.finished
+	cloned.queue_free()
 
 func onAttack(_wall: WallBase):
 	pass

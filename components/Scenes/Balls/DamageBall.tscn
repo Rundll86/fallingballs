@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cw6int17exqy3"]
+[gd_scene load_steps=14 format=3 uid="uid://cw6int17exqy3"]
 
 [ext_resource type="PackedScene" uid="uid://2ieitt62h5rm" path="res://components/Abstracts/BallBase.tscn" id="1_qxv3f"]
 [ext_resource type="Script" path="res://scripts/Contents/Balls/DamageBall.gd" id="2_cmuhp"]
+[ext_resource type="AudioStream" uid="uid://cxpsoj6ahbufc" path="res://resources/sounds/Clang.wav" id="3_bqs8m"]
 
 [sub_resource type="Curve" id="Curve_3sl8u"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -50,11 +51,14 @@ script = ExtResource("2_cmuhp")
 displayName = "重击球"
 damage = 1.0
 
-[node name="trail" parent="." index="0"]
+[node name="attack" parent="sounds" index="0"]
+stream = ExtResource("3_bqs8m")
+
+[node name="trail" parent="." index="1"]
 process_material = SubResource("ParticleProcessMaterial_pj8ym")
 
-[node name="hitbox" parent="." index="1"]
+[node name="hitbox" parent="." index="2"]
 shape = SubResource("CircleShape2D_6emdt")
 
-[node name="mask" parent="." index="2"]
-polygon = PackedVector2Array(10, 0, 9.80785, 1.9509, 9.2388, 3.82683, 8.3147, 5.5557, 7.07107, 7.07107, 5.5557, 8.3147, 3.82683, 9.2388, 1.9509, 9.80785, -4.37114e-07, 10, -1.9509, 9.80785, -3.82683, 9.2388, -5.5557, 8.3147, -7.07107, 7.07107, -8.3147, 5.5557, -9.2388, 3.82683, -9.80785, 1.9509, -10, -8.74228e-07, -9.80785, -1.9509, -9.2388, -3.82683, -8.3147, -5.5557, -7.07107, -7.07107, -5.5557, -8.31469, -3.82684, -9.2388, -1.9509, -9.80785, 1.19249e-07, -10, 1.9509, -9.80785, 3.82684, -9.23879, 5.5557, -8.3147, 7.07107, -7.07107, 8.3147, -5.5557, 9.2388, -3.82683, 9.80785, -1.9509)
+[node name="mask" parent="." index="3"]
+polygon = PackedVector2Array(15, 0, 14.7118, 2.92635, 13.8582, 5.74025, 12.472, 8.33355, 10.6066, 10.6066, 8.33355, 12.472, 5.74025, 13.8582, 2.92636, 14.7118, -6.55671e-07, 15, -2.92635, 14.7118, -5.74025, 13.8582, -8.33355, 12.472, -10.6066, 10.6066, -12.472, 8.33355, -13.8582, 5.74025, -14.7118, 2.92635, -15, -1.31134e-06, -14.7118, -2.92635, -13.8582, -5.74025, -12.472, -8.33355, -10.6066, -10.6066, -8.33356, -12.472, -5.74025, -13.8582, -2.92636, -14.7118, 1.78873e-07, -15, 2.92636, -14.7118, 5.74025, -13.8582, 8.33355, -12.472, 10.6066, -10.6066, 12.472, -8.33355, 13.8582, -5.74025, 14.7118, -2.92635)
