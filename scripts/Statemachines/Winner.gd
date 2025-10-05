@@ -14,6 +14,7 @@ func _ready():
 		func(body):
 			if body is BallBase:
 				print("%s赢了！" % body.displayName)
+				body.playSound("win")
 				body.queue_free()
 	)
 func _process(_delta):

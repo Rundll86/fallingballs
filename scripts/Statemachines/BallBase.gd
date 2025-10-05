@@ -35,7 +35,8 @@ func _process(_delta):
 
 func playSound(sound: String):
 	var cloned: AudioStreamPlayer2D = sounds.get_node(sound).duplicate()
-	add_child(cloned)
+	get_tree().root.add_child(cloned)
+	cloned.global_position = position
 	cloned.play()
 	await cloned.finished
 	cloned.queue_free()
