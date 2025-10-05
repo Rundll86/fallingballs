@@ -9,7 +9,6 @@ class_name Winner
 @onready var texture: ColorRect = $"%texture"
 
 func _ready():
-	hitbox.shape = hitbox.shape.duplicate()
 	body_entered.connect(
 		func(body):
 			if body is BallBase:
@@ -20,5 +19,5 @@ func _ready():
 func _process(_delta):
 	texture.size = get_viewport_rect().size * size
 	texture.position = texture.size / -2
-	hitbox.shape.size = get_viewport_rect().size * size
+	hitbox.position.y = texture.size.y / -2
 	position = get_viewport_rect().size * anchor

@@ -1,10 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0yulhbybmufa"]
+[gd_scene load_steps=11 format=3 uid="uid://b0yulhbybmufa"]
 
 [ext_resource type="PackedScene" uid="uid://dfj071ebq1n1t" path="res://components/Abstracts/BulletBase.tscn" id="1_oih8g"]
 [ext_resource type="Script" path="res://scripts/Contents/Bullets/Drill.gd" id="2_8p47w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ym8a"]
 radius = 1.0
+
+[sub_resource type="Curve" id="Curve_wartx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_c5bo4"]
+curve = SubResource("Curve_wartx")
+
+[sub_resource type="Gradient" id="Gradient_idcxh"]
+colors = PackedColorArray(1, 0.784265, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lcxgx"]
+gradient = SubResource("Gradient_idcxh")
+
+[sub_resource type="Curve" id="Curve_mw87x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mrkfg"]
+curve = SubResource("Curve_mw87x")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pft0u"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(0, 8, 0)
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_mrkfg")
+color_initial_ramp = SubResource("GradientTexture1D_lcxgx")
+alpha_curve = SubResource("CurveTexture_c5bo4")
 
 [node name="Bullet" instance=ExtResource("1_oih8g")]
 script = ExtResource("2_8p47w")
@@ -17,3 +51,9 @@ shape = SubResource("CircleShape2D_0ym8a")
 position = Vector2(-10, 0)
 color = Color(0.561098, 0.357667, 0, 1)
 polygon = PackedVector2Array(-10, -10, -10, 10, 10, 0)
+
+[node name="trail" type="GPUParticles2D" parent="texture" index="0"]
+position = Vector2(-10, 0)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_pft0u")
+local_coords = true
