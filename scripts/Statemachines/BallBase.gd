@@ -27,8 +27,6 @@ func _ready():
 func _process(_delta):
 	hitbox.shape.radius = radius
 	mask.radius = radius
-	texture.scale = Vector2.ONE
-	texture.scale = (Vector2.ONE * 2 * radius) / texture.get_rect().size
 	if not byClone:
 		var parent = get_parent()
 		if parent is PlaygroundBase:
