@@ -7,6 +7,7 @@
 friction = 0.0
 
 [node name="Playground" type="StaticBody2D"]
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_txkq8")
 script = ExtResource("1_hao73")
 borderPolygon = Array[Vector2]([Vector2(0, 0), Vector2(1, 0), Vector2(1, 1), Vector2(0, 1), Vector2(0, 0), Vector2(0.1, 0.1), Vector2(0.1, 0.9), Vector2(0.9, 0.9), Vector2(0.9, 0.1), Vector2(0.1, 0.1)])
