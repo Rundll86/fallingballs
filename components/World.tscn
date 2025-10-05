@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://h8i5gxomlxpq"]
+[gd_scene load_steps=4 format=3 uid="uid://h8i5gxomlxpq"]
 
 [ext_resource type="PackedScene" uid="uid://d0jigswwk1dgh" path="res://components/Scenes/Playgrounds/GravityBox.tscn" id="1_afrxx"]
+[ext_resource type="PackedScene" uid="uid://cw6int17exqy3" path="res://components/Scenes/Balls/DamageBall.tscn" id="2_6qmjj"]
 [ext_resource type="PackedScene" uid="uid://btvj03fot0k43" path="res://components/Scenes/Balls/SplitBall.tscn" id="2_cnqu2"]
 
 [node name="World" type="Node2D"]
@@ -9,3 +10,6 @@
 
 [node name="Ball" parent="Playground" instance=ExtResource("2_cnqu2")]
 position = Vector2(314, 116)
+
+[node name="Ball2" parent="Playground" instance=ExtResource("2_6qmjj")]
+position = Vector2(506, 126)

@@ -7,4 +7,4 @@ func onAttack(_wall: WallBase):
 		clone(Vector2(0, radius * -2)) # 还是不要克隆2次了，太卡了
 		canDuplicate = false
 func getDamage():
-	return bounceTime ** 2
+	return bounceTime + 1

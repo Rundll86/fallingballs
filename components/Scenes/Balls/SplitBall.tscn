@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://btvj03fot0k43"]
+[gd_scene load_steps=6 format=3 uid="uid://btvj03fot0k43"]
 
 [ext_resource type="PackedScene" uid="uid://2ieitt62h5rm" path="res://components/Abstracts/BallBase.tscn" id="1_2e1lw"]
 [ext_resource type="Script" path="res://scripts/Contents/Balls/SplitBall.gd" id="2_kegkv"]
 [ext_resource type="AudioStream" uid="uid://ur56oghflbly" path="res://resources/sounds/Collect.wav" id="3_ffe7a"]
+[ext_resource type="Texture2D" uid="uid://cnvayoh82wgf6" path="res://resources/balls/baseball.svg" id="4_mfxkx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cwuqw"]
 radius = 15.0
@@ -22,3 +23,7 @@ shape = SubResource("CircleShape2D_cwuqw")
 
 [node name="mask" parent="." index="3"]
 polygon = PackedVector2Array(15, 0, 14.7118, 2.92635, 13.8582, 5.74025, 12.472, 8.33355, 10.6066, 10.6066, 8.33355, 12.472, 5.74025, 13.8582, 2.92636, 14.7118, -6.55671e-07, 15, -2.92635, 14.7118, -5.74025, 13.8582, -8.33355, 12.472, -10.6066, 10.6066, -12.472, 8.33355, -13.8582, 5.74025, -14.7118, 2.92635, -15, -1.31134e-06, -14.7118, -2.92635, -13.8582, -5.74025, -12.472, -8.33355, -10.6066, -10.6066, -8.33356, -12.472, -5.74025, -13.8582, -2.92636, -14.7118, 1.78873e-07, -15, 2.92636, -14.7118, 5.74025, -13.8582, 8.33355, -12.472, 10.6066, -10.6066, 12.472, -8.33355, 13.8582, -5.74025, 14.7118, -2.92635)
+
+[node name="texture" parent="mask" index="0"]
+scale = Vector2(0.519, 0.519)
+texture = ExtResource("4_mfxkx")

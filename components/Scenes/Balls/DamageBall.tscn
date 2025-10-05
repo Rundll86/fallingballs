@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cw6int17exqy3"]
+[gd_scene load_steps=15 format=3 uid="uid://cw6int17exqy3"]
 
 [ext_resource type="PackedScene" uid="uid://2ieitt62h5rm" path="res://components/Abstracts/BallBase.tscn" id="1_qxv3f"]
 [ext_resource type="Script" path="res://scripts/Contents/Balls/DamageBall.gd" id="2_cmuhp"]
 [ext_resource type="AudioStream" uid="uid://cxpsoj6ahbufc" path="res://resources/sounds/Clang.wav" id="3_bqs8m"]
+[ext_resource type="Texture2D" uid="uid://5nn4k6mqicy8" path="res://resources/balls/basketball.svg" id="4_hcfc0"]
 
 [sub_resource type="Curve" id="Curve_3sl8u"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -49,7 +50,6 @@ alpha_curve = SubResource("CurveTexture_1u1ym")
 [node name="Ball" instance=ExtResource("1_qxv3f")]
 script = ExtResource("2_cmuhp")
 displayName = "重击球"
-damage = 1.0
 
 [node name="attack" parent="sounds" index="0"]
 stream = ExtResource("3_bqs8m")
@@ -62,3 +62,8 @@ shape = SubResource("CircleShape2D_6emdt")
 
 [node name="mask" parent="." index="3"]
 polygon = PackedVector2Array(15, 0, 14.7118, 2.92635, 13.8582, 5.74025, 12.472, 8.33355, 10.6066, 10.6066, 8.33355, 12.472, 5.74025, 13.8582, 2.92636, 14.7118, -6.55671e-07, 15, -2.92635, 14.7118, -5.74025, 13.8582, -8.33355, 12.472, -10.6066, 10.6066, -12.472, 8.33355, -13.8582, 5.74025, -14.7118, 2.92635, -15, -1.31134e-06, -14.7118, -2.92635, -13.8582, -5.74025, -12.472, -8.33355, -10.6066, -10.6066, -8.33356, -12.472, -5.74025, -13.8582, -2.92636, -14.7118, 1.78873e-07, -15, 2.92636, -14.7118, 5.74025, -13.8582, 8.33355, -12.472, 10.6066, -10.6066, 12.472, -8.33355, 13.8582, -5.74025, 14.7118, -2.92635)
+
+[node name="texture" parent="mask" index="0"]
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(0.454, 0.454)
+texture = ExtResource("4_hcfc0")

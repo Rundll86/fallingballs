@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[layer_names]
+
+2d_physics/default_linear_damp=0.1
+
 [physics]
 
 2d/default_linear_damp=0.0
