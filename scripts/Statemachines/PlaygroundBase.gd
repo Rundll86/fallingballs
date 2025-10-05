@@ -1,5 +1,5 @@
 @tool
-extends StaticBody2D
+extends WorldManager
 class_name PlaygroundBase
 
 @export var borderColor: Color = Color.BLACK
@@ -16,7 +16,8 @@ func _process(_delta):
 	texture.anchor = borderPolygon
 	hitbox.polygon = texture.polygon
 	background.color = backgroundColor
-	ballInfo.text = getBallInfo()
+	if not Engine.is_editor_hint():
+		ballInfo.text = getBallInfo()
 
 func getAllBalls() -> Array[BallBase]:
 	var result: Array[BallBase] = []
@@ -25,7 +26,7 @@ func getAllBalls() -> Array[BallBase]:
 			result.append(child)
 	return result
 func getBallInfo() -> String:
-	var result: String = ""
+	var result = ""
 	for ball in getAllBalls():
 		if not ball.byClone:
 			result += ball.getInfo() + "\n"

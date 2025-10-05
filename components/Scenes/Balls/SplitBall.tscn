@@ -10,7 +10,7 @@ radius = 15.0
 
 [node name="Ball" instance=ExtResource("1_2e1lw")]
 script = ExtResource("2_kegkv")
-displayName = "分裂指数球"
+displayName = "分裂球"
 
 [node name="attack" parent="sounds" index="0"]
 stream = ExtResource("3_ffe7a")

@@ -1,4 +1,3 @@
-@tool
 extends RigidBody2D
 class_name BallBase
 
@@ -23,7 +22,8 @@ func _ready():
 				playSound("attack")
 				EffectBase.create("HitWall", position + Vector2(0, radius), 0, get_parent())
 	)
-	apply_central_force(Vector2(10000, 0))
+	apply_central_force(Vector2(10000 * randf_range(-1, 1), 10000 * randf_range(-1, 1)))
+	spawn()
 func _process(_delta):
 	hitbox.shape.radius = radius
 	mask.radius = radius
@@ -48,6 +48,8 @@ func value(data) -> String:
 func percent(data) -> String:
 	return "%.1f%%" % (data * 100)
 
+func spawn():
+	pass
 func getDamage():
 	return 1
 func onAttack(_wall: WallBase):

@@ -7,7 +7,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pm2r4"]
 friction = 0.0
-bounce = 0.97
+bounce = 0.98
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_isie4"]
 particle_flag_disable_z = true
