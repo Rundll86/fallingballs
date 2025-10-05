@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://btvj03fot0k43"]
+[gd_scene load_steps=5 format=3 uid="uid://btvj03fot0k43"]
 
 [ext_resource type="PackedScene" uid="uid://2ieitt62h5rm" path="res://components/Abstracts/BallBase.tscn" id="1_2e1lw"]
 [ext_resource type="Script" path="res://scripts/Contents/Balls/SplitBall.gd" id="2_kegkv"]
+[ext_resource type="AudioStream" uid="uid://ur56oghflbly" path="res://resources/sounds/Collect.wav" id="3_ffe7a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cwuqw"]
 radius = 15.0
@@ -9,6 +10,9 @@ radius = 15.0
 [node name="Ball" instance=ExtResource("1_2e1lw")]
 script = ExtResource("2_kegkv")
 displayName = "分裂指数球"
+
+[node name="attack" parent="sounds" index="0"]
+stream = ExtResource("3_ffe7a")
 
 [node name="trail" parent="." index="1"]
 emitting = false

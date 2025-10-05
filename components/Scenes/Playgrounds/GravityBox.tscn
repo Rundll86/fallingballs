@@ -36,22 +36,7 @@ position = Vector2(658.5, 315)
 anchor = Vector2(0.5, 0.5)
 level = 4
 
-[node name="Wall6" parent="." index="8" instance=ExtResource("2_bgl6g")]
-position = Vector2(658.5, 346.5)
-anchor = Vector2(0.5, 0.55)
-level = 5
-
-[node name="Wall7" parent="." index="9" instance=ExtResource("2_bgl6g")]
-position = Vector2(658.5, 378)
-anchor = Vector2(0.5, 0.6)
-level = 6
-
-[node name="Wall8" parent="." index="10" instance=ExtResource("2_bgl6g")]
-position = Vector2(658.5, 409.5)
-anchor = Vector2(0.5, 0.65)
-level = 7
-
-[node name="Winner" parent="." index="11" instance=ExtResource("3_lw1q2")]
+[node name="Winner" parent="." index="8" instance=ExtResource("3_lw1q2")]
 position = Vector2(658.5, 535.5)
 size = Vector2(0.8, 0.1)
 anchor = Vector2(0.5, 0.85)

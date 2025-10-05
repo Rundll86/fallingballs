@@ -14,6 +14,7 @@ func _ready():
 		func(body):
 			if body is BallBase:
 				print("%s赢了！" % body.displayName)
+				body.queue_free()
 	)
 func _process(_delta):
 	texture.size = get_viewport_rect().size * size

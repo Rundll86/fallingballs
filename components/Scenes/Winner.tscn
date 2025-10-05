@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Statemachines/Winner.gd" id="1_psfcv"]
 [ext_resource type="Shader" path="res://shaders/Winner.gdshader" id="2_qsl2d"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ilh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2wuk"]
 size = Vector2(1317, 630)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7i31a"]
@@ -12,12 +12,11 @@ shader_parameter/square_size = 25
 
 [node name="Winner" type="Area2D"]
 collision_layer = 2
-collision_mask = 0
 script = ExtResource("1_psfcv")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-shape = SubResource("RectangleShape2D_x0ilh")
+shape = SubResource("RectangleShape2D_l2wuk")
 
 [node name="texture" type="ColorRect" parent="."]
 unique_name_in_owner = true

@@ -9,4 +9,3 @@
 
 [node name="Ball" parent="Playground" instance=ExtResource("2_cnqu2")]
 position = Vector2(314, 116)
-collision_layer = 1

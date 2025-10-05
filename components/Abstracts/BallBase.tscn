@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://2ieitt62h5rm"]
+[gd_scene load_steps=8 format=3 uid="uid://2ieitt62h5rm"]
 
 [ext_resource type="Script" path="res://scripts/Statemachines/BallBase.gd" id="1_6n61d"]
 [ext_resource type="Script" path="res://scripts/Statemachines/Circle.gd" id="2_cnf5w"]
+[ext_resource type="AudioStream" uid="uid://bjhltwqyn31gd" path="res://resources/sounds/Bell Toll.wav" id="2_k145n"]
 [ext_resource type="Texture2D" uid="uid://gjopiwetb1c4" path="res://icon.svg" id="3_t36mp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pm2r4"]
@@ -14,7 +15,7 @@ emission_shape = 1
 emission_sphere_radius = 10.0
 gravity = Vector3(0, 0, 0)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4yqlk"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ssl2"]
 radius = 15.0
 
 [node name="Ball" type="RigidBody2D"]
@@ -29,13 +30,16 @@ unique_name_in_owner = true
 
 [node name="attack" type="AudioStreamPlayer2D" parent="sounds"]
 
+[node name="win" type="AudioStreamPlayer2D" parent="sounds"]
+stream = ExtResource("2_k145n")
+
 [node name="trail" type="GPUParticles2D" parent="."]
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_isie4")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-shape = SubResource("CircleShape2D_4yqlk")
+shape = SubResource("CircleShape2D_3ssl2")
 
 [node name="mask" type="Polygon2D" parent="."]
 unique_name_in_owner = true
