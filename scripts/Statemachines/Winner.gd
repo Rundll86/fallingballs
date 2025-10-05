@@ -10,6 +10,11 @@ class_name Winner
 
 func _ready():
 	hitbox.shape = hitbox.shape.duplicate()
+	body_entered.connect(
+		func(body):
+			if body is BallBase:
+				print("%s赢了！" % body.displayName)
+	)
 func _process(_delta):
 	texture.size = get_viewport_rect().size * size
 	texture.position = texture.size / -2

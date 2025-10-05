@@ -47,6 +47,7 @@ alpha_curve = SubResource("CurveTexture_1u1ym")
 
 [node name="Ball" instance=ExtResource("1_qxv3f")]
 script = ExtResource("2_cmuhp")
+displayName = "重击球"
 damage = 1.0
 
 [node name="trail" parent="." index="0"]

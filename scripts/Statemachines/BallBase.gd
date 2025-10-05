@@ -24,6 +24,11 @@ func _process(_delta):
 	hitbox.shape.radius = radius
 	mask.radius = radius
 	texture.scale = (Vector2.ONE * 2 * radius) / texture.get_rect().size
+	var parent = get_parent()
+	if parent is PlaygroundBase:
+		parent.ballInfo.text = applyInfo()
 
 func onAttack(_wall: WallBase):
 	pass
+func applyInfo():
+	return "%s 伤害：%s" % [displayName, damage]

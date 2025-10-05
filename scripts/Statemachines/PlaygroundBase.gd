@@ -9,6 +9,7 @@ class_name PlaygroundBase
 @onready var hitbox: CollisionPolygon2D = $"%hitbox"
 @onready var texture: AnchoredPolygon = $"%texture"
 @onready var background: AnchoredPolygon = $"%background"
+@onready var ballInfo: Label = $"%ballInfo"
 
 func _process(_delta):
 	texture.color = borderColor
