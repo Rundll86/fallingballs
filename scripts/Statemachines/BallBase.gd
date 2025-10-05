@@ -4,7 +4,6 @@ class_name BallBase
 
 @export var radius: float = 15
 @export var displayName: String = "未命名球"
-@export var damage: float = 0
 
 @onready var hitbox: CollisionShape2D = $"%hitbox"
 @onready var mask: Circle = $"%mask"
@@ -17,7 +16,7 @@ func _ready():
 	body_entered.connect(
 		func(body):
 			if body is WallBase:
-				body.takeDamage(damage, self)
+				body.takeDamage(getDamage(), self)
 				onAttack(body)
 				bounceTime += 1
 				playSound("attack")
@@ -39,7 +38,9 @@ func playSound(sound: String):
 	await cloned.finished
 	cloned.queue_free()
 
+func getDamage():
+	return 1
 func onAttack(_wall: WallBase):
 	pass
 func applyInfo():
-	return "%s 伤害：%s" % [displayName, damage]
+	return "%s 伤害：%s" % [displayName, getDamage()]
