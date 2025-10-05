@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Statemachines/WallBase.gd" id="1_37h8t"]
 [ext_resource type="Script" path="res://scripts/Statemachines/AnchoredPolygon.gd" id="1_nmngc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie3mx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if22y"]
 size = Vector2(1317, 630)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yiinn"]
@@ -15,7 +15,7 @@ script = ExtResource("1_37h8t")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-shape = SubResource("RectangleShape2D_ie3mx")
+shape = SubResource("RectangleShape2D_if22y")
 
 [node name="texture" type="Polygon2D" parent="."]
 unique_name_in_owner = true

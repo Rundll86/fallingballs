@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://btvj03fot0k43"]
+
+[ext_resource type="PackedScene" uid="uid://2ieitt62h5rm" path="res://components/Abstracts/BallBase.tscn" id="1_2e1lw"]
+[ext_resource type="Script" path="res://scripts/Contents/Balls/SplitBall.gd" id="2_kegkv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cwuqw"]
+radius = 15.0
+
+[node name="Ball" instance=ExtResource("1_2e1lw")]
+collision_layer = 1
+script = ExtResource("2_kegkv")
+displayName = "分裂球"
+damage = 1.0
+
+[node name="trail" parent="." index="1"]
+emitting = false
+
+[node name="hitbox" parent="." index="2"]
+shape = SubResource("CircleShape2D_cwuqw")
