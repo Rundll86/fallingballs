@@ -29,10 +29,10 @@ func getDamage():
 	return bounceTime + 1
 func applyInfo():
 	return "伤害：%s，克隆：%s(+%s)，数量：%s/%s(+%s)" % [
-		value(getDamage()),
-		percent(cloneRate),
-		percent(cloneRateIncreaseSpeed),
+		intValue(getDamage()),
+		percentValue(cloneRate),
+		percentValue(cloneRateIncreaseSpeed),
 		BallTool.findBallTyped(SplitBall).size(),
 		maxCount,
-		percent(maxIncreaseRate)
+		percentValue(maxIncreaseRate)
 	]

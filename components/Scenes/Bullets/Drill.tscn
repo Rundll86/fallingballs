@@ -54,6 +54,6 @@ polygon = PackedVector2Array(-10, -10, -10, 10, 10, 0)
 
 [node name="trail" type="GPUParticles2D" parent="texture" index="0"]
 position = Vector2(-10, 0)
-amount = 50
+amount = 10
 process_material = SubResource("ParticleProcessMaterial_pft0u")
 local_coords = true

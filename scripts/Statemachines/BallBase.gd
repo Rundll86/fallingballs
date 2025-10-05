@@ -43,9 +43,11 @@ func clone(offset: Vector2):
 	return cloned
 func getInfo():
 	return "%s %s" % [displayName, applyInfo()]
-func value(data) -> String:
+func intValue(data) -> String:
 	return "%d" % data
-func percent(data) -> String:
+func floatValue(data) -> String:
+	return "%.1f" % data
+func percentValue(data) -> String:
 	return "%.1f%%" % (data * 100)
 
 func spawn():
@@ -55,4 +57,4 @@ func getDamage():
 func onAttack(_wall: WallBase):
 	pass
 func applyInfo():
-	return "伤害：%s" % [value(getDamage())]
+	return "伤害：%s" % [intValue(getDamage())]
