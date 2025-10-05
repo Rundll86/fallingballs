@@ -1,17 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://v78fptwx00pw"]
+[gd_scene load_steps=5 format=3 uid="uid://v78fptwx00pw"]
 
 [ext_resource type="Script" path="res://scripts/Statemachines/WallBase.gd" id="1_37h8t"]
 [ext_resource type="Script" path="res://scripts/Statemachines/AnchoredPolygon.gd" id="1_nmngc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7288w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie3mx"]
 size = Vector2(1317, 630)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yiinn"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
 
 [node name="Wall" type="StaticBody2D"]
 script = ExtResource("1_37h8t")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-shape = SubResource("RectangleShape2D_7288w")
+shape = SubResource("RectangleShape2D_ie3mx")
 
 [node name="texture" type="Polygon2D" parent="."]
 unique_name_in_owner = true
@@ -20,3 +24,14 @@ color = Color(0.745098, 0.745098, 0.745098, 1)
 polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 630, 0, 630)
 script = ExtResource("1_nmngc")
 anchor = Array[Vector2]([Vector2(0, 0), Vector2(1, 0), Vector2(1, 1), Vector2(0, 1)])
+
+[node name="health" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -658.5
+offset_top = -315.0
+offset_right = 658.5
+offset_bottom = 315.0
+text = "100"
+label_settings = SubResource("LabelSettings_yiinn")
+horizontal_alignment = 1
+vertical_alignment = 1
