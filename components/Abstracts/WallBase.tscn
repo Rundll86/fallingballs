@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://v78fptwx00pw"]
+
+[ext_resource type="Script" path="res://scripts/Statemachines/WallBase.gd" id="1_37h8t"]
+[ext_resource type="Script" path="res://scripts/Statemachines/AnchoredPolygon.gd" id="1_nmngc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7288w"]
+size = Vector2(1317, 630)
+
+[node name="Wall" type="StaticBody2D"]
+script = ExtResource("1_37h8t")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_7288w")
+
+[node name="texture" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-658.5, -315)
+color = Color(0.745098, 0.745098, 0.745098, 1)
+polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 630, 0, 630)
+script = ExtResource("1_nmngc")
+anchor = Array[Vector2]([Vector2(0, 0), Vector2(1, 0), Vector2(1, 1), Vector2(0, 1)])

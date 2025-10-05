@@ -3,9 +3,13 @@
 [ext_resource type="Script" path="res://scripts/Statemachines/PlaygroundBase.gd" id="1_hao73"]
 [ext_resource type="Script" path="res://scripts/Statemachines/AnchoredPolygon.gd" id="2_qo7p3"]
 
-[node name="PlaygroundBase" type="StaticBody2D"]
+[node name="Playground" type="StaticBody2D"]
 script = ExtResource("1_hao73")
 borderPolygon = Array[Vector2]([Vector2(0, 0), Vector2(1, 0), Vector2(1, 1), Vector2(0, 1), Vector2(0, 0), Vector2(0.1, 0.1), Vector2(0.1, 0.9), Vector2(0.9, 0.9), Vector2(0.9, 0.1), Vector2(0.1, 0.1)])
+
+[node name="hitbox" type="CollisionPolygon2D" parent="."]
+unique_name_in_owner = true
+polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 630, 0, 630, 0, 0, 131.7, 63, 131.7, 567, 1185.3, 567, 1185.3, 63, 131.7, 63)
 
 [node name="background" type="Polygon2D" parent="."]
 unique_name_in_owner = true
@@ -19,7 +23,3 @@ color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 630, 0, 630, 0, 0, 131.7, 63, 131.7, 567, 1185.3, 567, 1185.3, 63, 131.7, 63)
 script = ExtResource("2_qo7p3")
 anchor = Array[Vector2]([Vector2(0, 0), Vector2(1, 0), Vector2(1, 1), Vector2(0, 1), Vector2(0, 0), Vector2(0.1, 0.1), Vector2(0.1, 0.9), Vector2(0.9, 0.9), Vector2(0.9, 0.1), Vector2(0.1, 0.1)])
-
-[node name="hitbox" type="CollisionPolygon2D" parent="."]
-unique_name_in_owner = true
-polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 630, 0, 630, 0, 0, 131.7, 63, 131.7, 567, 1185.3, 567, 1185.3, 63, 131.7, 63)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2bpb4pibvfld"]
+
+[ext_resource type="Script" path="res://scripts/Statemachines/Winner.gd" id="1_psfcv"]
+[ext_resource type="Script" path="res://scripts/Statemachines/AnchoredPolygon.gd" id="2_r7sve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6tao"]
+size = Vector2(770.445, 359.1)
+
+[node name="Winner" type="Area2D"]
+script = ExtResource("1_psfcv")
+size = Vector2(0.585, 0.57)
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_d6tao")
+
+[node name="texture" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-385.222, -179.55)
+polygon = PackedVector2Array(0, 0, 770.445, 0, 770.445, 359.1, 0, 359.1)
+script = ExtResource("2_r7sve")
+anchor = Array[Vector2]([Vector2(0, 0), Vector2(0.585, 0), Vector2(0.585, 0.57), Vector2(0, 0.57)])
