@@ -2,14 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://v78fptwx00pw" path="res://components/Abstracts/WallBase.tscn" id="1_ouaaf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mr0l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7l1by"]
 size = Vector2(1053.6, 31.5)
 
 [node name="Wall" instance=ExtResource("1_ouaaf")]
 size = Vector2(0.8, 0.05)
+maxHealthBase = 10.0
 
 [node name="hitbox" parent="." index="0"]
-shape = SubResource("RectangleShape2D_0mr0l")
+shape = SubResource("RectangleShape2D_7l1by")
 
 [node name="texture" parent="." index="1"]
 position = Vector2(-526.8, -15.75)
@@ -21,4 +22,4 @@ anchor = Array[Vector2]([Vector2(0, 0), Vector2(0.8, 0), Vector2(0.8, 0.05), Vec
 offset_left = -526.8
 offset_top = -15.75
 offset_right = 526.8
-offset_bottom = 26.25
+offset_bottom = 15.75

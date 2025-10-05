@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv3xpp77cnm4a"]
+[gd_scene load_steps=4 format=3 uid="uid://cv3xpp77cnm4a"]
 
 [ext_resource type="Script" path="res://scripts/Statemachines/PlaygroundBase.gd" id="1_hao73"]
 [ext_resource type="Script" path="res://scripts/Statemachines/AnchoredPolygon.gd" id="2_qo7p3"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_txkq8"]
+friction = 0.0
+
 [node name="Playground" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_txkq8")
 script = ExtResource("1_hao73")
 borderPolygon = Array[Vector2]([Vector2(0, 0), Vector2(1, 0), Vector2(1, 1), Vector2(0, 1), Vector2(0, 0), Vector2(0.1, 0.1), Vector2(0.1, 0.9), Vector2(0.9, 0.9), Vector2(0.9, 0.1), Vector2(0.1, 0.1)])
 

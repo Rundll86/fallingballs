@@ -25,5 +25,16 @@ func _process(_delta):
 	healthBar.text = str(currentHealth)
 	healthBar.size = get_viewport_rect().size * size
 	healthBar.position = get_viewport_rect().size * size / -2
+
 func applyLevel(lv):
 	return maxHealthBase ** lv
+func takeDamage(damage: float, source: BallBase):
+	currentHealth -= damage
+	if currentHealth <= 0:
+		tryDie(source)
+func tryDie(source: BallBase):
+	die(source)
+	queue_free()
+
+func die(_source: BallBase):
+	pass
