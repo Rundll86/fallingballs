@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfj071ebq1n1t"]
+
+[ext_resource type="Script" path="res://scripts/Statemachines/BulletBase.gd" id="1_f46q6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ivrhd"]
+
+[node name="Bullet" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_f46q6")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ivrhd")
+
+[node name="texture" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)

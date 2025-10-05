@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0yulhbybmufa"]
+
+[ext_resource type="PackedScene" uid="uid://dfj071ebq1n1t" path="res://components/Abstracts/BulletBase.tscn" id="1_oih8g"]
+[ext_resource type="Script" path="res://scripts/Contents/Bullets/Drill.gd" id="2_8p47w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ym8a"]
+radius = 1.0
+
+[node name="Bullet" instance=ExtResource("1_oih8g")]
+script = ExtResource("2_8p47w")
+speed = 1.0
+
+[node name="hitbox" parent="." index="0"]
+shape = SubResource("CircleShape2D_0ym8a")
+
+[node name="texture" parent="." index="1"]
+position = Vector2(-10, 0)
+color = Color(0.561098, 0.357667, 0, 1)
+polygon = PackedVector2Array(-10, -10, -10, 10, 10, 0)

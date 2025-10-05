@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://tq4c7ydkek7h"]
+
+[ext_resource type="PackedScene" uid="uid://2ieitt62h5rm" path="res://components/Abstracts/BallBase.tscn" id="1_rf6f1"]
+[ext_resource type="Script" path="res://scripts/Contents/Balls/DrillBall.gd" id="2_66vcj"]
+[ext_resource type="Texture2D" uid="uid://cogq8ohlnc5j6" path="res://resources/balls/beachball.svg" id="2_varxs"]
+
+[node name="Ball" instance=ExtResource("1_rf6f1")]
+script = ExtResource("2_66vcj")
+displayName = "挖掘球"
+
+[node name="mask" parent="." index="3"]
+polygon = PackedVector2Array(15, 0, 14.7118, 2.92635, 13.8582, 5.74025, 12.472, 8.33355, 10.6066, 10.6066, 8.33355, 12.472, 5.74025, 13.8582, 2.92636, 14.7118, -6.55671e-07, 15, -2.92635, 14.7118, -5.74025, 13.8582, -8.33355, 12.472, -10.6066, 10.6066, -12.472, 8.33355, -13.8582, 5.74025, -14.7118, 2.92635, -15, -1.31134e-06, -14.7118, -2.92635, -13.8582, -5.74025, -12.472, -8.33355, -10.6066, -10.6066, -8.33356, -12.472, -5.74025, -13.8582, -2.92636, -14.7118, 1.78873e-07, -15, 2.92636, -14.7118, 5.74025, -13.8582, 8.33355, -12.472, 10.6066, -10.6066, 12.472, -8.33355, 13.8582, -5.74025, 14.7118, -2.92635)
+
+[node name="texture" parent="mask" index="0"]
+scale = Vector2(0.449619, 0.449619)
+texture = ExtResource("2_varxs")
