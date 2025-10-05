@@ -6,7 +6,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pm2r4"]
 friction = 0.0
-bounce = 0.95
+bounce = 0.97
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_isie4"]
 particle_flag_disable_z = true
@@ -14,7 +14,8 @@ emission_shape = 1
 emission_sphere_radius = 10.0
 gravity = Vector3(0, 0, 0)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_d3s1p"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgsji"]
+radius = 15.0
 
 [node name="Ball" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_pm2r4")
@@ -22,21 +23,27 @@ contact_monitor = true
 max_contacts_reported = 1000
 script = ExtResource("1_6n61d")
 
+[node name="sounds" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="attack" type="AudioStreamPlayer2D" parent="sounds"]
+
 [node name="trail" type="GPUParticles2D" parent="."]
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_isie4")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-shape = SubResource("CircleShape2D_d3s1p")
+shape = SubResource("CircleShape2D_bgsji")
 
 [node name="mask" type="Polygon2D" parent="."]
 unique_name_in_owner = true
 clip_children = 1
-polygon = PackedVector2Array(10, 0, 9.80785, 1.9509, 9.2388, 3.82683, 8.3147, 5.5557, 7.07107, 7.07107, 5.5557, 8.3147, 3.82683, 9.2388, 1.9509, 9.80785, -4.37114e-07, 10, -1.9509, 9.80785, -3.82683, 9.2388, -5.5557, 8.3147, -7.07107, 7.07107, -8.3147, 5.5557, -9.2388, 3.82683, -9.80785, 1.9509, -10, -8.74228e-07, -9.80785, -1.9509, -9.2388, -3.82683, -8.3147, -5.5557, -7.07107, -7.07107, -5.5557, -8.31469, -3.82684, -9.2388, -1.9509, -9.80785, 1.19249e-07, -10, 1.9509, -9.80785, 3.82684, -9.23879, 5.5557, -8.3147, 7.07107, -7.07107, 8.3147, -5.5557, 9.2388, -3.82683, 9.80785, -1.9509)
+polygon = PackedVector2Array(15, 0, 14.7118, 2.92635, 13.8582, 5.74025, 12.472, 8.33355, 10.6066, 10.6066, 8.33355, 12.472, 5.74025, 13.8582, 2.92636, 14.7118, -6.55671e-07, 15, -2.92635, 14.7118, -5.74025, 13.8582, -8.33355, 12.472, -10.6066, 10.6066, -12.472, 8.33355, -13.8582, 5.74025, -14.7118, 2.92635, -15, -1.31134e-06, -14.7118, -2.92635, -13.8582, -5.74025, -12.472, -8.33355, -10.6066, -10.6066, -8.33356, -12.472, -5.74025, -13.8582, -2.92636, -14.7118, 1.78873e-07, -15, 2.92636, -14.7118, 5.74025, -13.8582, 8.33355, -12.472, 10.6066, -10.6066, 12.472, -8.33355, 13.8582, -5.74025, 14.7118, -2.92635)
 script = ExtResource("2_cnf5w")
+radius = 15.0
 
 [node name="texture" type="Sprite2D" parent="mask"]
 unique_name_in_owner = true
-scale = Vector2(0.15625, 0.15625)
+scale = Vector2(0.234375, 0.234375)
 texture = ExtResource("3_t36mp")

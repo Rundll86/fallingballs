@@ -2,13 +2,14 @@
 extends RigidBody2D
 class_name BallBase
 
-@export var radius: float = 10
+@export var radius: float = 15
 @export var displayName: String = "未命名球"
 @export var damage: float = 0
 
 @onready var hitbox: CollisionShape2D = $"%hitbox"
 @onready var mask: Circle = $"%mask"
 @onready var texture: Sprite2D = $"%texture"
+var bounceTime: int = 0
 
 func _ready():
 	hitbox.shape = hitbox.shape.duplicate()
@@ -17,9 +18,10 @@ func _ready():
 			if body is WallBase:
 				body.takeDamage(damage, self)
 				onAttack(body)
+				bounceTime += 1
 				EffectBase.create("HitWall", position + Vector2(0, radius), 0, get_parent())
 	)
-	apply_central_force(Vector2.from_angle(deg_to_rad(randf() * 360.0)) * 10000)
+	apply_central_force(Vector2(10000, 0))
 func _process(_delta):
 	hitbox.shape.radius = radius
 	mask.radius = radius
