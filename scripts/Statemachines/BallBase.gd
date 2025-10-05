@@ -17,6 +17,7 @@ func _ready():
 			if body is WallBase:
 				body.takeDamage(damage, self)
 				onAttack(body)
+				EffectBase.create("HitWall", position + Vector2(0, radius), 0, get_parent())
 	)
 	apply_central_force(Vector2.from_angle(deg_to_rad(randf() * 360.0)) * 10000)
 func _process(_delta):
