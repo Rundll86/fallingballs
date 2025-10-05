@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FallingBalls"
-run/main_scene="res://components/Scenes/Playgrounds/GravityBox.tscn"
+run/main_scene="res://components/World.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
