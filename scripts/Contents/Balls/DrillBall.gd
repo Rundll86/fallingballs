@@ -9,11 +9,11 @@ var backwardRate = 0.05
 func onAttack(_wall: WallBase):
 	for i in floor(count):
 		get_parent().call_deferred("add_child", BulletBase.create("Drill", self, position - Vector2((radius * count) ** (1.0 / 1.5) * randf_range(-1, 1), 0), deg_to_rad(90)))
-	count += 0.2
+	count += 0.1
+	backwardRate += 0.05
 	if randf() < penerateIncreaseRate:
-		penerate = clamp(penerate + 0.01, 0, 1)
+		penerate = clamp(penerate + 0.02, 0, 1)
 		penerateIncreaseRate -= 0.01
-		backwardRate += 0.1
 	else:
 		penerateIncreaseRate += 0.02
 func getDamage():

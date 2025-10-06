@@ -8,4 +8,4 @@ func exitWall(_wall: WallBase):
 			tryDie()
 		elif randf() < launcher.backwardRate:
 			rotation_degrees -= 180
-			launcher.backwardRate -= 0.25 / launcher.count
+			launcher.backwardRate -= 0.15 / launcher.count
