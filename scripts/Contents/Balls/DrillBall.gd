@@ -4,6 +4,7 @@ class_name DrillBall
 var count = 1.0
 var penerate = 0.1
 var penerateIncreaseRate = 0.25
+var backwardRate = 0.05
 
 func onAttack(_wall: WallBase):
 	for i in floor(count):
@@ -12,14 +13,16 @@ func onAttack(_wall: WallBase):
 	if randf() < penerateIncreaseRate:
 		penerate = clamp(penerate + 0.01, 0, 1)
 		penerateIncreaseRate -= 0.01
+		backwardRate += 0.1
 	else:
 		penerateIncreaseRate += 0.02
 func getDamage():
 	return bounceTime + 1
 func applyInfo():
-	return "伤害：%s，钻头：%s，穿透：%s(+%s)" % [
+	return "伤害：%s，钻头：%s，穿透：%s(+%s)，返航：%s" % [
 		intValue(getDamage()),
 		floatValue(count),
 		percentValue(penerate),
-		percentValue(penerateIncreaseRate)
+		percentValue(penerateIncreaseRate),
+		percentValue(backwardRate)
 	]

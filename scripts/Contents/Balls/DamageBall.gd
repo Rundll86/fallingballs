@@ -3,7 +3,7 @@ extends BallBase
 var increaseRate = 1.00
 
 func onAttack(_wall: WallBase):
-	increaseRate += 0.0001
+	increaseRate += 0.0005
 func getDamage():
 	return round(increaseRate ** bounceTime)
 func applyInfo():

@@ -24,6 +24,9 @@ func _ready():
 			if body is WallBase:
 				exitWall(body)
 	)
+func _process(_delta):
+	if not get_viewport_rect().has_point(position):
+		tryDie()
 func _physics_process(_delta):
 	for body in get_overlapping_bodies():
 		if body is WallBase:
