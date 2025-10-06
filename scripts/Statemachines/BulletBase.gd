@@ -19,6 +19,11 @@ func _ready():
 			if body is WallBase:
 				enterWall(body)
 	)
+	body_exited.connect(
+		func(body):
+			if body is WallBase:
+				exitWall(body)
+	)
 func _physics_process(_delta):
 	for body in get_overlapping_bodies():
 		if body is WallBase:
@@ -37,6 +42,8 @@ func ai():
 func onAttack(_wall: WallBase):
 	pass
 func enterWall(_wall: WallBase):
+	pass
+func exitWall(_wall: WallBase):
 	pass
 func die():
 	pass
