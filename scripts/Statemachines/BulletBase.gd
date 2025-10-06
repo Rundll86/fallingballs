@@ -9,11 +9,6 @@ class PresetAI:
 var launcher: BallBase
 
 func _ready():
-	area_entered.connect(
-		func(area):
-			if area is Winner:
-				queue_free()
-	)
 	body_entered.connect(
 		func(body):
 			if body is WallBase:
