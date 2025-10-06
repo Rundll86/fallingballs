@@ -22,7 +22,7 @@ func _ready():
 				playSound("attack")
 				EffectBase.create("HitWall", position + Vector2(0, radius), 0, get_parent())
 	)
-	apply_central_force(Vector2(10000 * randf_range(-1, 1), 10000 * randf_range(-1, 1)))
+	randomForce()
 	spawn()
 func _process(_delta):
 	hitbox.shape.radius = radius
@@ -49,6 +49,10 @@ func floatValue(data) -> String:
 	return "%.1f" % data
 func percentValue(data) -> String:
 	return "%.1f%%" % (data * 100)
+func randomForce(force: float = 10000):
+	apply_central_force(Vector2(force * randf_range(-1, 1), force * randf_range(-1, 1)))
+func jump(force: float = 10000):
+	apply_central_force(Vector2(0, -force))
 
 func spawn():
 	pass

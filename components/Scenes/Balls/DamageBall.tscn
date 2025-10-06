@@ -1,9 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://cw6int17exqy3"]
+[gd_scene load_steps=16 format=3 uid="uid://cw6int17exqy3"]
 
 [ext_resource type="PackedScene" uid="uid://2ieitt62h5rm" path="res://components/Abstracts/BallBase.tscn" id="1_qxv3f"]
 [ext_resource type="Script" path="res://scripts/Contents/Balls/DamageBall.gd" id="2_cmuhp"]
 [ext_resource type="AudioStream" uid="uid://cxpsoj6ahbufc" path="res://resources/sounds/Clang.wav" id="3_bqs8m"]
 [ext_resource type="Texture2D" uid="uid://5nn4k6mqicy8" path="res://resources/balls/basketball.svg" id="4_hcfc0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qlx2p"]
+friction = 0.0
+bounce = 0.95
 
 [sub_resource type="Curve" id="Curve_3sl8u"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -46,8 +50,10 @@ color_initial_ramp = SubResource("GradientTexture1D_j6b1d")
 alpha_curve = SubResource("CurveTexture_1u1ym")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6emdt"]
+radius = 15.0
 
 [node name="Ball" instance=ExtResource("1_qxv3f")]
+physics_material_override = SubResource("PhysicsMaterial_qlx2p")
 script = ExtResource("2_cmuhp")
 displayName = "重击球"
 
@@ -64,6 +70,6 @@ shape = SubResource("CircleShape2D_6emdt")
 polygon = PackedVector2Array(15, 0, 14.7118, 2.92635, 13.8582, 5.74025, 12.472, 8.33355, 10.6066, 10.6066, 8.33355, 12.472, 5.74025, 13.8582, 2.92636, 14.7118, -6.55671e-07, 15, -2.92635, 14.7118, -5.74025, 13.8582, -8.33355, 12.472, -10.6066, 10.6066, -12.472, 8.33355, -13.8582, 5.74025, -14.7118, 2.92635, -15, -1.31134e-06, -14.7118, -2.92635, -13.8582, -5.74025, -12.472, -8.33355, -10.6066, -10.6066, -8.33356, -12.472, -5.74025, -13.8582, -2.92636, -14.7118, 1.78873e-07, -15, 2.92636, -14.7118, 5.74025, -13.8582, 8.33355, -12.472, 10.6066, -10.6066, 12.472, -8.33355, 13.8582, -5.74025, 14.7118, -2.92635)
 
 [node name="texture" parent="mask" index="0"]
-position = Vector2(-4.76837e-07, -4.76837e-07)
-scale = Vector2(0.454, 0.454)
+position = Vector2(-2.84217e-14, -2.84217e-14)
+scale = Vector2(0.657021, 0.657021)
 texture = ExtResource("4_hcfc0")

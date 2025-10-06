@@ -8,46 +8,16 @@
 [node name="Playground" instance=ExtResource("1_afrxx")]
 
 [node name="hitbox" parent="." index="0"]
-polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 594, 0, 594, 0, 0, 131.7, 59.4, 131.7, 534.6, 1185.3, 534.6, 1185.3, 59.4, 131.7, 59.4)
-
-[node name="background" parent="." index="1"]
-polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 594, 0, 594)
+polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 630, 0, 630, 0, 0, 131.7, 63, 131.7, 567, 1185.3, 567, 1185.3, 63, 131.7, 63)
 
 [node name="texture" parent="." index="2"]
-polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 594, 0, 594, 0, 0, 131.7, 59.4, 131.7, 534.6, 1185.3, 534.6, 1185.3, 59.4, 131.7, 59.4)
-
-[node name="Wall" parent="." index="3"]
-position = Vector2(658.5, 178.2)
-
-[node name="Wall2" parent="." index="4"]
-position = Vector2(658.5, 207.9)
-
-[node name="Wall3" parent="." index="5"]
-position = Vector2(658.5, 237.6)
-
-[node name="Wall4" parent="." index="6"]
-position = Vector2(658.5, 267.3)
-
-[node name="Wall5" parent="." index="7"]
-position = Vector2(658.5, 297)
-
-[node name="Wall6" parent="." index="8"]
-position = Vector2(658.5, 326.7)
-
-[node name="Wall7" parent="." index="9"]
-position = Vector2(658.5, 356.4)
-
-[node name="Wall8" parent="." index="10"]
-position = Vector2(658.5, 386.1)
-
-[node name="Winner" parent="." index="11"]
-position = Vector2(658.5, 504.9)
+polygon = PackedVector2Array(0, 0, 1317, 0, 1317, 630, 0, 630, 0, 0, 131.7, 63, 131.7, 567, 1185.3, 567, 1185.3, 63, 131.7, 63)
 
 [node name="Ball" parent="." index="13" instance=ExtResource("2_6qmjj")]
-position = Vector2(283, 103)
+position = Vector2(289, 128)
 
-[node name="Ball2" parent="." index="14" instance=ExtResource("2_cnqu2")]
-position = Vector2(558, 99)
+[node name="Ball2" parent="." index="14" instance=ExtResource("4_28m4g")]
+position = Vector2(841, 124)
 
-[node name="Ball3" parent="." index="15" instance=ExtResource("4_28m4g")]
-position = Vector2(782, 113)
+[node name="Ball3" parent="." index="15" instance=ExtResource("2_cnqu2")]
+position = Vector2(595, 145)
