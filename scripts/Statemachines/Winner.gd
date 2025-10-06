@@ -11,7 +11,7 @@ class_name Winner
 func _ready():
 	body_entered.connect(
 		func(body):
-			if body is BallBase:
+			if body is BallBase and not body.byClone:
 				print("%s赢了！" % body.displayName)
 				body.playSound("win")
 				body.queue_free()
